@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace CourseWork.DAL.DbContext
 {
-    public class AppDbContext : IdentityDbContext<AppUser>
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext (DbContextOptions<AppDbContext> options) : base(options)
         {    }
-        
+
+#pragma warning disable CS0114 // Член скрывает унаследованный член: отсутствует ключевое слово переопределения
         public DbSet<User> Users { get; set; }
+#pragma warning restore CS0114 // Член скрывает унаследованный член: отсутствует ключевое слово переопределения
         public DbSet<Bonus> Bonuses { get; set; }
         public DbSet<Campain> Campains { get; set; }
         public DbSet<Comment> Comments { get; set; }

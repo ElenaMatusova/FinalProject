@@ -9,6 +9,6 @@ namespace CourseWork.DAL.Identity
 {
     public class AppUser : IdentityUser
     {
-        public virtual User User { get; set; }
+       // public virtual User User { get; set; }
     }
 }

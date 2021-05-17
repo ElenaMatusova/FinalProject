@@ -1,3 +1,4 @@
+using CourseWork.BLL.Infrastructure;
 using CourseWork.DAL.DbContext;
 using CourseWork.DAL.Identity;
 using CourseWork.DAL.IRepositories;
@@ -37,6 +38,8 @@ namespace CourseWork
             services.AddIdentity<AppUser, IdentityRole>()
                     .AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddAutoMapper(typeof(MapperModel));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

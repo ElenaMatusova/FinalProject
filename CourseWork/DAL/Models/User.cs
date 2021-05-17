@@ -19,6 +19,6 @@ namespace CourseWork.DAL.Models
         public virtual ICollection<Like> Likes { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
         public virtual ICollection<Vote> Votes { get; set; }
-        public virtual AppUser AppUser { get; set; }
+       // public virtual AppUser AppUser { get; set; }
     }
 }
